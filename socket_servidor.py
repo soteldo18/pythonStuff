@@ -13,7 +13,7 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as server:
 			data=conn.recv(1024)
 			reenviar="Escribistes: "+str(data.decode("utf-8"))
 			print("Dato recibido:",str(data.decode("utf-8")))
-			if data=="salir":
+			if str(data.decode("utf-8"))=="salir":
 				salir=False
 			else:
 				conn.sendall(reenviar.encode("utf-8"))
